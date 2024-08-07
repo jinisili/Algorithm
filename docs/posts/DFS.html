@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><code>-</code> 재귀, 스택 / 인접 리스트, 인접 행렬</p>
+<p><code>-</code> 인접 리스트, 재귀, 스택</p>
 <section id="개념" class="level1">
 <h1>개념</h1>
 <ul>
@@ -202,10 +202,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># edges: 인접한 노드 쌍</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>edges <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="인접-리스트-또는-인접-행렬-생성" class="level2">
-<h2 class="anchored" data-anchor-id="인접-리스트-또는-인접-행렬-생성">1. 인접 리스트 또는 인접 행렬 생성</h2>
-<section id="인접-리스트" class="level3">
-<h3 class="anchored" data-anchor-id="인접-리스트">1-1. 인접 리스트</h3>
+<section id="인접-리스트-생성" class="level2">
+<h2 class="anchored" data-anchor-id="인접-리스트-생성">1. 인접 리스트 생성</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 리스트로 구현</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>graph <span class="op">=</span> [[] <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(V<span class="op">+</span><span class="dv">1</span>)]</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -237,7 +235,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 스택</span></span>
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    graph[node] <span class="op">=</span> <span class="bu">sorted</span>(edges, reverse<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</section>
 <section id="함수-구현" class="level2">
 <h2 class="anchored" data-anchor-id="함수-구현">2. 함수 구현</h2>
 <section id="재귀" class="level3">
@@ -260,8 +257,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="스택" class="level3">
 <h3 class="anchored" data-anchor-id="스택">2-2. 스택</h3>
-<section id="방법1" class="level4">
-<h4 class="anchored" data-anchor-id="방법1">방법1</h4>
+<ul>
+<li>방법1</li>
+</ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs_stack1(start_node):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    stack <span class="op">=</span> [start_node]</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -285,9 +283,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>visited <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (V<span class="op">+</span><span class="dv">1</span>)</span>
 <span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>dfs_stack1(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="방법2" class="level4">
-<h4 class="anchored" data-anchor-id="방법2">방법2</h4>
+<ul>
+<li>방법2</li>
+</ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> dfs_stack2(start_node):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    stack <span class="op">=</span> []</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(start_node)</span>
@@ -329,7 +327,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>dfs_stack2(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
-</section>
 </section>
 </section>
 </section>
