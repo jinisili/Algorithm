@@ -2,8 +2,12 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/정렬.html",
+      "/posts/Stack.html",
+      "/posts/검색.html",
+      "/posts/패턴 매칭.html",
+      "/posts/배열.html",
+      "/posts/DFS.html"
     ]
   }
 ]
